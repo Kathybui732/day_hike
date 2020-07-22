@@ -24,4 +24,9 @@ RSpec.describe "Trip Show Page" do
     expect(page).to have_content(@trail_1.length)
     expect(page).to have_content(@trail_2.length)
   end
+
+  it "displays the total hiking distance of all trails on that hiking trip" do
+    visit "/trips/#{@trip_1.id}"
+    expect(page).to have_content("Total Trip Distance: 5")
+  end
 end
