@@ -1,1 +1,9 @@
 <%= @trip.name %>'s Show Page
+
+<% @trip.trails.each do |trail| %>
+  <section class="trails-<%= trail.id %>">
+    <%= trail.name %>
+    <%= trail.address %>
+    <%= trail.length %>
+  </section>
+<% end %>
