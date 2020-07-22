@@ -25,7 +25,11 @@ describe Trail, type: :model do
     end
 
     it "#total_distance" do
-    expect(Trail.total_distance).to eq(5)
+      expect(Trail.total_distance).to eq(5)
+    end
+
+    it "#average_distance" do
+      expect(Trail.average_distance).to eq(2.5)
     end
   end
 end

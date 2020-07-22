@@ -8,4 +8,8 @@ class Trail < ApplicationRecord
   def self.total_distance
     sum(:length)
   end
+
+  def self.average_distance
+    average(:length)
+  end
 end
