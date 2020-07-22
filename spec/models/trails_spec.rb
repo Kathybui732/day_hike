@@ -31,5 +31,13 @@ describe Trail, type: :model do
     it "#average_distance" do
       expect(Trail.average_distance).to eq(2.5)
     end
+
+    it "#longest_trail" do
+      expect(Trail.longest_trail).to eq(@trail_2)
+    end
+
+    it "#shortest_trail" do
+      expect(Trail.shortest_trail).to eq(@trail_1)
+    end
   end
 end

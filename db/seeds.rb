@@ -12,7 +12,7 @@ trail_1 = Trail.create(name: "Garden of the Gods", address: "123 Hike Trail", le
 trail_2 = Trail.create(name: "Incline", address: "123 Hike Trail", length: 3)
 trail_3 = Trail.create(name: "Devil's Thumb", address: "123 Hike Trail", length: 4)
 
-HikeTrail.create(trip: trip_1, trail: trail_1)
-HikeTrail.create(trip: trip_1, trail: trail_2)
-HikeTrail.create(trip: trip_2, trail: trail_1)
-HikeTrail.create(trip: trip_2, trail: trail_3)
+TripTrail.create(trip: trip_1, trail: trail_1)
+TripTrail.create(trip: trip_1, trail: trail_2)
+TripTrail.create(trip: trip_2, trail: trail_1)
+TripTrail.create(trip: trip_2, trail: trail_3)

@@ -18,10 +18,10 @@ RSpec.describe "Trip Show Page" do
   it "displays the name, address, and length for each trail" do
     visit "/trips/#{@trip_1.id}"
     expect(page).to have_content(@trail_1.name)
-    expect(page).to have_content(@trail_2.name)
     expect(page).to have_content(@trail_1.address)
-    expect(page).to have_content(@trail_2.address)
     expect(page).to have_content(@trail_1.length)
+    expect(page).to have_content(@trail_2.name)
+    expect(page).to have_content(@trail_2.address)
     expect(page).to have_content(@trail_2.length)
   end
 
@@ -33,5 +33,23 @@ RSpec.describe "Trip Show Page" do
   it "displays the average hiking distance of all trails on that hiking trip" do
     visit "/trips/#{@trip_1.id}"
     expect(page).to have_content("Average Distance: 2.5")
+  end
+
+  it "a heading that says 'Longest Trail on Trip' and the name and length of the longest trail included on that hiking trip" do
+    visit "/trips/#{@trip_1.id}"
+    within(".longest-trail") do
+      expect(page).to have_content("Longest Trail on Trip")
+      expect(page).to have_content(@trail_2.name)
+      expect(page).to have_content(@trail_2.length)
+    end
+  end
+
+  it "a heading that says 'Shortest Trail on Trip' and the name and length of the shortest trail included on that hiking trip" do
+    visit "/trips/#{@trip_1.id}"
+    within(".shortest-trail") do
+      expect(page).to have_content("Shortest Trail on Trip")
+      expect(page).to have_content(@trail_1.name)
+      expect(page).to have_content(@trail_1.length)
+    end
   end
 end

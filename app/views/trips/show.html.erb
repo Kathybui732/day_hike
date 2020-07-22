@@ -11,3 +11,15 @@
 Total Trip Distance: <%= @trip.trails.total_distance %>
 
 Average Distance: <%= @trip.trails.average_distance %>
+
+<section class="longest-trail">
+  Longest Trail on Trip
+  <%= @trip.trails.longest_trail.name %>
+  <%= @trip.trails.longest_trail.length %>
+</section>
+
+<section class="shortest-trail">
+  Shortest Trail on Trip
+  <%= @trip.trails.shortest_trail.name %>
+  <%= @trip.trails.shortest_trail.length %>
+</section>
