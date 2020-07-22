@@ -4,6 +4,7 @@ class CreateTrails < ActiveRecord::Migration[5.1]
       t.integer :length
       t.string :name
       t.string :address
+      t.timestamps
     end
   end
 end
