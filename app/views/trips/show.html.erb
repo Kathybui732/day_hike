@@ -2,7 +2,7 @@
 
 <% @trip.trails.each do |trail| %>
   <section class="trails-<%= trail.id %>">
-    <%= trail.name %>
+    <%= link_to "#{trail.name}", "/trails/#{trail.id}" %>
     <%= trail.address %>
     <%= trail.length %>
   </section>

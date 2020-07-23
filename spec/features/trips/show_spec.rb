@@ -52,4 +52,22 @@ RSpec.describe "Trip Show Page" do
       expect(page).to have_content(@trail_1.length)
     end
   end
+
+  it "displays a link of the name of a trail to see a show page for that specific trail" do
+    visit "/trips/#{@trip_1.id}"
+    expect(page).to have_link(@trail_1.name)
+    expect(page).to have_link(@trail_2.name)
+    within(".trails-#{@trail_1.id}") do
+      click_on @trail_1.name
+      expect(current_path).to eq("/trails/#{@trail_1.id}")
+    end
+  end
+
+	it "can click on the name of a hiking trip, linking to a unique page for that hiking trip." do
+		visit "/trips/#{@trip_1.id}"
+		within(".trails-#{@trail_1.id}") do
+			click_on "#{@trail_1.name}"
+			expect(current_path).to eq("/trails/#{@trail_1.id}")
+		end
+	end
 end
