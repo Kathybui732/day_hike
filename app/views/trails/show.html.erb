@@ -1,1 +1,10 @@
 <%= @trail.name %>'s Show Page
+
+<%= @trail.address %>
+
+<% @trail.trips.each do |trip| %>
+<section class="trips-<%= trip.id %>">
+  <%= trip.name %>
+  Total Length: <%= trip.trails.total_distance %>
+</section>
+<% end %>
